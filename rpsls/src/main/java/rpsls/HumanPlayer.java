@@ -9,6 +9,6 @@ package rpsls;
  *
  * @author Admin
  */
-public class HumanPlayer {
+public class HumanPlayer extends Player {
     
 }

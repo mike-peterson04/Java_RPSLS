@@ -9,6 +9,6 @@ package rpsls;
  *
  * @author Admin
  */
-public class AIPlayer {
+public class AIPlayer extends Player {
     
 }

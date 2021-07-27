@@ -1,2 +1,10 @@
+rpsls/HumanPlayer.java
+ rpsls.HumanPlayer
+rpsls/Player.java
+ rpsls.Player
+rpsls/AIPlayer.java
+ rpsls.AIPlayer
+rpsls/Game.java
+ rpsls.Game
 rpsls/Main.java
  rpsls.Main
