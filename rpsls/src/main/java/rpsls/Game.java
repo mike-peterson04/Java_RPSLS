@@ -62,8 +62,30 @@ public class Game {
             
         }
         this.setToWin();
+        this.runMatch();
         
         
+    }
+    private void runMatch(){
+        while(!this.chooseWinner()){
+            this.playGame().WinRound();
+        }
+        
+    }
+    
+    private boolean chooseWinner(){
+        if(this.player1.victories>=this.toWin){
+            System.out.println("Congratulations to "+this.player1.name+" on winning");
+            return true;
+        }
+        else if(this.player2.victories>=this.toWin){
+            System.out.println("Congratulations to "+this.player2.name+" on winning");
+            return true;
+        }
+        else{
+            
+            return false;
+        }
     }
     
     private Player playGame(){

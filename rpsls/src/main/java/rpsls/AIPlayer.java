@@ -21,6 +21,30 @@ public class AIPlayer extends Player {
     @Override
     public String SelectSign(){
         String gesture = "ERROR";
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 5 + 1);
+        switch (randomNum) {
+                    case 1 -> {
+                        gesture = "ROCK";
+                        break;
+                    }
+                    case 2 -> {
+                        gesture = "PAPER";
+                        break;
+                    }
+                    case 3 -> {
+                        gesture = "SCISSORS";
+                        break;
+                    }
+                    case 4 -> {
+                        gesture = "LIZARD";
+                        break;
+                    }
+                    case 5 -> {
+                        gesture = "SPOCK";
+                        break;
+                    }
+                    default -> System.out.println("Please enter a number between 1-5");
+                }
         return gesture;
     }
     
