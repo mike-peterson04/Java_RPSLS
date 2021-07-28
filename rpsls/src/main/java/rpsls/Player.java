@@ -9,6 +9,18 @@ package rpsls;
  *
  * @author Admin
  */
-public class Player {
+public abstract class Player {
+    String name;
+    int victories;
+    public Player(String playerName){
+        name = playerName;
+        victories = 0;      
+    }
+    
+    public abstract String SelectSign();
+    
+    public void WinRound(){
+        victories++;
+    }
     
 }

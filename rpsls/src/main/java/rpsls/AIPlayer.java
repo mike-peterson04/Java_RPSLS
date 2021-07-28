@@ -5,10 +5,23 @@
  */
 package rpsls;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author Admin
  */
 public class AIPlayer extends Player {
+    
+    public AIPlayer(String PlayerName){
+       super(PlayerName);  
+    }
+    
+    
+    @Override
+    public String SelectSign(){
+        String gesture = "ERROR";
+        return gesture;
+    }
     
 }

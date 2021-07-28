@@ -34,7 +34,8 @@ public class Game {
                     
                 }
                 else if(parseInt(gameType) == 2){
-                    System.out.println("2");
+                    player1 = new HumanPlayer();
+                    player2 = new HumanPlayer();
                     break;
                     
                 }
