@@ -7,6 +7,7 @@ package rpsls;
 
 import static java.lang.Integer.parseInt;
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Game {
     Player player1;
     Player player2;
     Scanner keyboard;
+    int toWin;
     
     public Game(){
         keyboard = new Scanner(System.in);
@@ -29,18 +31,20 @@ public class Game {
             
                 gameType = keyboard.nextLine();
                 if(parseInt(gameType) == 1){
-                    System.out.println("1");
+                    player1 = new HumanPlayer(this.nameHuman());
+                    player2 = new AIPlayer(this.nameAI());
                     break;
                     
                 }
                 else if(parseInt(gameType) == 2){
-                    player1 = new HumanPlayer();
-                    player2 = new HumanPlayer();
+                    player1 = new HumanPlayer(this.nameHuman());
+                    player2 = new HumanPlayer(this.nameHuman());
                     break;
                     
                 }
                 else if(parseInt(gameType) == 3){
-                    System.out.println("3");
+                    player1 = new AIPlayer(this.nameAI());
+                    player2 = new AIPlayer(this.nameAI());
                     break;
                     
                 }
@@ -56,6 +60,48 @@ public class Game {
             }
             
         }
+        this.setToWin();
+        
+        
+    }
+    
+    private void setToWin(){
+        while(true){
+            try{
+                System.out.println("This match will be a best of how many games? (minimum 3):");
+                String gameToWin;
+                gameToWin = keyboard.nextLine();
+                 if(parseInt(gameToWin) >= 3 && parseInt(gameToWin)%2 > 0){
+                    this.toWin = (parseInt(gameToWin)/2)+1;
+                    break;
+                    
+                }
+                else{
+                    System.out.println("Please enter a odd number greater than 3");
+                    
+                }
+                
+               
+                
+            }
+            catch(Exception e){
+                System.out.println("Please enter a odd number greater than 3");
+                System.out.println(e);
+            }
+            
+        }
+        
+        
+    }
+    
+    private String nameHuman(){
+        System.out.println("Please enter a players name:");
+        return keyboard.nextLine();
+    }
+    
+    private String nameAI(){
+       int randomNum = ThreadLocalRandom.current().nextInt(0, 9999 + 1); 
+       return("Player:"+randomNum);
     }
     
 }
