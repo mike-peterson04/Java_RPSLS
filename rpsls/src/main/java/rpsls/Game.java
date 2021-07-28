@@ -106,11 +106,11 @@ public class Game {
             if (first.equals(second)){
                 System.out.println("This round was a Tie, Play again");
             }
-            else if(winningCombo.contains(first+second)){
+            else if(winningCombo.containsKey(first+second)){
                 System.out.println(this.player1.name+" wins as their "+winningCombo.get(first+second));
                 return this.player1;
             }
-            else if(winningCombo.contains(second+first)){
+            else if(winningCombo.containsKey(second+first)){
                 System.out.println(this.player2.name+" wins as their "+winningCombo.get(second+first));
                 return this.player2;
             }
