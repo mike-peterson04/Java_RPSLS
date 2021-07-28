@@ -6,6 +6,7 @@
 package rpsls;
 
 import static java.lang.Integer.parseInt;
+import java.util.Hashtable;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -63,6 +64,41 @@ public class Game {
         this.setToWin();
         
         
+    }
+    
+    private Player playGame(){
+       Hashtable<String,String> winningCombo = new Hashtable<String,String>();
+       winningCombo.put("ROCKSCISSORS", "Rock smashes Scissors");
+       winningCombo.put("ROCKLIZARD", "Rock crushes Lizard");
+       winningCombo.put("PAPERROCK", "Paper covers Rock");
+       winningCombo.put("PAPERSPOCK", "Paper disproves Spock");
+       winningCombo.put("SCISSORSPAPER", "Scissors cut Paper");
+       winningCombo.put("SCISSORSLIZARD", "Scissors decapitate Lizard");
+       winningCombo.put("LIZARDPAPER", "Lizard eats Paper");
+       winningCombo.put("LIZARDSPOCK", "Lizard poisons Spock");
+       winningCombo.put("SPOCKSCISSORS", "Spock uses Scissors");
+       winningCombo.put("SPOCKROCK", "Spock vaporizes Rock");
+        while(true){
+            String first = this.player1.SelectSign();
+            String second = this.player2.SelectSign();
+            if (first.equals(second)){
+                System.out.println("This round was a Tie, Play again");
+            }
+            else if(winningCombo.contains(first+second)){
+                System.out.println(this.player1.name+" wins as their "+winningCombo.get(first+second));
+                return this.player1;
+            }
+            else if(winningCombo.contains(second+first)){
+                System.out.println(this.player2.name+" wins as their "+winningCombo.get(second+first));
+                return this.player2;
+            }
+            else{
+                System.out.println("Something went wrong please try playing again");
+            }
+            
+            
+        }
+               
     }
     
     private void setToWin(){

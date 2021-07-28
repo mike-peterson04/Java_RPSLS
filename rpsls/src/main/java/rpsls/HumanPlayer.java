@@ -33,24 +33,27 @@ public class HumanPlayer extends Player {
             String gestureIndex = keyboard.nextLine();
             if (null != gestureIndex) {
                 switch (gestureIndex) {
-                    case "1":
+                    case "1" -> {
                         gesture = "ROCK";
                         break OUTER;
-                    case "2":
+                    }
+                    case "2" -> {
                         gesture = "PAPER";
                         break OUTER;
-                    case "3":
+                    }
+                    case "3" -> {
                         gesture = "SCISSORS";
                         break OUTER;
-                    case "4":
+                    }
+                    case "4" -> {
                         gesture = "LIZARD";
                         break OUTER;
-                    case "5":
+                    }
+                    case "5" -> {
                         gesture = "SPOCK";
                         break OUTER;
-                    default:
-                        System.out.println("Please enter a number between 1-5");
-                        break;
+                    }
+                    default -> System.out.println("Please enter a number between 1-5");
                 }
             }
         }
