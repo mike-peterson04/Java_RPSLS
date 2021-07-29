@@ -21,7 +21,6 @@ public abstract class Player {
     
     public void WinRound(){
         victories++;
-        System.out.println("Has "+victories+" victories");
     }
     
 }
